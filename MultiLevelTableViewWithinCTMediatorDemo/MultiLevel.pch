@@ -1,0 +1,58 @@
+//
+//  MultiLevel.pch
+//  MultiLevelTableViewWithinCTMediatorDemo
+//
+//  Created by wdyzmx on 2021/11/27.
+//
+
+#ifndef MultiLevel_pch
+#define MultiLevel_pch
+
+#import <UIKit/UIKit.h>
+#import "CTMediator.h"
+#import "CTMediator+HandyTools.h"
+#import <Masonry.h>
+#import <MJExtension.h>
+
+#define KScreenWidth [UIScreen mainScreen].bounds.size.width
+#define KScreenHeight [UIScreen mainScreen].bounds.size.height
+
+//iPhoneX / iPhoneXS
+#define isIphoneX_XS (KScreenWidth == 375.f && KScreenHeight == 812.f ? YES : NO)
+//iPhoneXR / iPhoneXSMax
+#define isIphoneXR_XSMax (KScreenWidth == 414.f && KScreenHeight == 896.f ? YES : NO)
+//iphone12ProMax
+#define isIphone12ProMax (KScreenWidth == 428.f && KScreenHeight == 926.f ? YES : NO)
+//iphone12 / iphone12Pro
+#define isIphone12_Pro (KScreenWidth == 390.f && KScreenHeight == 844.f ? YES : NO)
+//iphone12mini
+#define isIphone12Mini (KScreenWidth == 360.f && KScreenHeight == 812.f ? YES : NO)
+//iphone13ProMax
+#define isIphone13ProMax (KScreenWidth == 428.f && KScreenHeight == 926.f ? YES : NO)
+//iphone13 / iphone13Pro
+#define isIphone13_Pro (KScreenWidth == 390.f && KScreenHeight == 844.f ? YES : NO)
+//iphone13mini
+#define isIphone13Mini (KScreenWidth == 360.f && KScreenHeight == 812.f ? YES : NO)
+//全面屏
+#define isFullScreen (isIphoneX_XS || isIphoneXR_XSMax || isIphone12ProMax || isIphone12_Pro || isIphone12Mini || isIphone13ProMax || isIphone13_Pro || isIphone13Mini)
+// iphone12系列(mini 到 Pro Max)
+#define isIphone12Mini_Max (isIphone12ProMax || isIphone12_Pro || isIphone12Mini)
+// iphone13系列(mini 到 Pro Max)
+#define isIphone13Mini_Max (isIphone13ProMax || isIphone13_Pro || isIphone13Mini)
+//#define isFullScreen (KScreenHeight == 812.f || KScreenHeight == 844.f || KScreenHeight == 896.f || KScreenHeight == 926.f)
+// Status bar height.
+//#define StatusBarHeight (isFullScreen ? 44.f : 20.f)
+#define StatusBarHeight (isFullScreen && isIphone12Mini_Max ? 47.f : (isFullScreen ? 44.f : 20.f))
+// Navigation bar height.
+#define NavigationBarHeight 44.f
+// Tabbar height.
+#define TabbarHeight (isFullScreen ? (49.f+34.f) : 49.f)
+// Tabbar safe bottom margin.
+#define TabbarSafeBottomMargin (isFullScreen ? 34.f : 0.f)
+// Status bar & navigation bar height.
+#define StatusBarAndNavigationBarHeight (isFullScreen ? 88.f : 64.f)
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* MultiLevel_pch */

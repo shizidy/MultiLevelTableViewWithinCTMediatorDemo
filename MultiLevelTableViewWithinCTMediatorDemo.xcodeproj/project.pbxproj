@@ -1,0 +1,569 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7491394C275234B800F29BA4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491394B275234B800F29BA4 /* AppDelegate.m */; };
+		7491394F275234B800F29BA4 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491394E275234B800F29BA4 /* SceneDelegate.m */; };
+		74913952275234B800F29BA4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74913951275234B800F29BA4 /* ViewController.m */; };
+		74913955275234B800F29BA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74913953275234B800F29BA4 /* Main.storyboard */; };
+		74913957275234C500F29BA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74913956275234C500F29BA4 /* Assets.xcassets */; };
+		7491395A275234C500F29BA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74913958275234C500F29BA4 /* LaunchScreen.storyboard */; };
+		7491395D275234C500F29BA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491395C275234C500F29BA4 /* main.m */; };
+		7491398D275236C200F29BA4 /* cityResource.json in Resources */ = {isa = PBXBuildFile; fileRef = 7491396C275236C200F29BA4 /* cityResource.json */; };
+		7491398E275236C200F29BA4 /* right_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7491396D275236C200F29BA4 /* right_arrow@2x.png */; };
+		7491398F275236C200F29BA4 /* right_arrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7491396E275236C200F29BA4 /* right_arrow@3x.png */; };
+		74913990275236C200F29BA4 /* Resource.json in Resources */ = {isa = PBXBuildFile; fileRef = 7491396F275236C200F29BA4 /* Resource.json */; };
+		74913991275236C200F29BA4 /* MultiLevelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74913973275236C200F29BA4 /* MultiLevelModel.m */; };
+		74913992275236C200F29BA4 /* MultiLevelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74913974275236C200F29BA4 /* MultiLevelCell.m */; };
+		74913993275236C200F29BA4 /* MultiLevelViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74913975275236C200F29BA4 /* MultiLevelViewModel.m */; };
+		74913994275236C200F29BA4 /* CTMediator+MultiLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74913977275236C200F29BA4 /* CTMediator+MultiLevel.m */; };
+		74913995275236C200F29BA4 /* Target_MultiLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491397A275236C200F29BA4 /* Target_MultiLevel.m */; };
+		74913996275236C200F29BA4 /* MultiLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491397D275236C200F29BA4 /* MultiLevelViewController.m */; };
+		74913997275236C200F29BA4 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491397F275236C200F29BA4 /* RootViewController.m */; };
+		74913998275236C200F29BA4 /* CTMediator+HandyTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 74913983275236C200F29BA4 /* CTMediator+HandyTools.m */; };
+		74913999275236C200F29BA4 /* CTMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 74913984275236C200F29BA4 /* CTMediator.m */; };
+		7491399A275236C200F29BA4 /* CTMediator+MultiLevelCraft.m in Sources */ = {isa = PBXBuildFile; fileRef = 74913989275236C200F29BA4 /* CTMediator+MultiLevelCraft.m */; };
+		7491399B275236C200F29BA4 /* MultiLevelCraftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7491398A275236C200F29BA4 /* MultiLevelCraftViewController.m */; };
+		920F638E301C724B066B5966 /* Pods_MultiLevelTableViewWithinCTMediatorDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A83ABDE62285DD36DC9C69B9 /* Pods_MultiLevelTableViewWithinCTMediatorDemo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		293D2DB90C11D685A4704B43 /* Pods-MultiLevelTableViewWithinCTMediatorDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiLevelTableViewWithinCTMediatorDemo.release.xcconfig"; path = "Target Support Files/Pods-MultiLevelTableViewWithinCTMediatorDemo/Pods-MultiLevelTableViewWithinCTMediatorDemo.release.xcconfig"; sourceTree = "<group>"; };
+		63794E1043B900DE5F8E1E65 /* Pods-MultiLevelTableViewWithinCTMediatorDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiLevelTableViewWithinCTMediatorDemo.debug.xcconfig"; path = "Target Support Files/Pods-MultiLevelTableViewWithinCTMediatorDemo/Pods-MultiLevelTableViewWithinCTMediatorDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		74913947275234B800F29BA4 /* MultiLevelTableViewWithinCTMediatorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiLevelTableViewWithinCTMediatorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7491394A275234B800F29BA4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7491394B275234B800F29BA4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7491394D275234B800F29BA4 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		7491394E275234B800F29BA4 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		74913950275234B800F29BA4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		74913951275234B800F29BA4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		74913954275234B800F29BA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		74913956275234C500F29BA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		74913959275234C500F29BA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7491395B275234C500F29BA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7491395C275234C500F29BA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		749139652752350300F29BA4 /* MultiLevel.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiLevel.pch; sourceTree = "<group>"; };
+		7491396C275236C200F29BA4 /* cityResource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cityResource.json; sourceTree = "<group>"; };
+		7491396D275236C200F29BA4 /* right_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right_arrow@2x.png"; sourceTree = "<group>"; };
+		7491396E275236C200F29BA4 /* right_arrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right_arrow@3x.png"; sourceTree = "<group>"; };
+		7491396F275236C200F29BA4 /* Resource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Resource.json; sourceTree = "<group>"; };
+		74913972275236C200F29BA4 /* Target_MultiLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Target_MultiLevel.h; sourceTree = "<group>"; };
+		74913973275236C200F29BA4 /* MultiLevelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiLevelModel.m; sourceTree = "<group>"; };
+		74913974275236C200F29BA4 /* MultiLevelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiLevelCell.m; sourceTree = "<group>"; };
+		74913975275236C200F29BA4 /* MultiLevelViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiLevelViewModel.m; sourceTree = "<group>"; };
+		74913976275236C200F29BA4 /* MultiLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiLevelViewController.h; sourceTree = "<group>"; };
+		74913977275236C200F29BA4 /* CTMediator+MultiLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+MultiLevel.m"; sourceTree = "<group>"; };
+		74913978275236C200F29BA4 /* MultiLevelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiLevelCell.h; sourceTree = "<group>"; };
+		74913979275236C200F29BA4 /* MultiLevelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiLevelModel.h; sourceTree = "<group>"; };
+		7491397A275236C200F29BA4 /* Target_MultiLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Target_MultiLevel.m; sourceTree = "<group>"; };
+		7491397B275236C200F29BA4 /* MultiLevelViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiLevelViewModel.h; sourceTree = "<group>"; };
+		7491397C275236C200F29BA4 /* CTMediator+MultiLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTMediator+MultiLevel.h"; sourceTree = "<group>"; };
+		7491397D275236C200F29BA4 /* MultiLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiLevelViewController.m; sourceTree = "<group>"; };
+		7491397F275236C200F29BA4 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		74913980275236C200F29BA4 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		74913983275236C200F29BA4 /* CTMediator+HandyTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+HandyTools.m"; sourceTree = "<group>"; };
+		74913984275236C200F29BA4 /* CTMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTMediator.m; sourceTree = "<group>"; };
+		74913985275236C200F29BA4 /* CTMediator+HandyTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTMediator+HandyTools.h"; sourceTree = "<group>"; };
+		74913986275236C200F29BA4 /* CTMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTMediator.h; sourceTree = "<group>"; };
+		74913988275236C200F29BA4 /* MultiLevelCraftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiLevelCraftViewController.h; sourceTree = "<group>"; };
+		74913989275236C200F29BA4 /* CTMediator+MultiLevelCraft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+MultiLevelCraft.m"; sourceTree = "<group>"; };
+		7491398A275236C200F29BA4 /* MultiLevelCraftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiLevelCraftViewController.m; sourceTree = "<group>"; };
+		7491398B275236C200F29BA4 /* CTMediator+MultiLevelCraft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTMediator+MultiLevelCraft.h"; sourceTree = "<group>"; };
+		A83ABDE62285DD36DC9C69B9 /* Pods_MultiLevelTableViewWithinCTMediatorDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiLevelTableViewWithinCTMediatorDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		74913944275234B800F29BA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				920F638E301C724B066B5966 /* Pods_MultiLevelTableViewWithinCTMediatorDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04DE524DD6EC0DD8ECB35B71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A83ABDE62285DD36DC9C69B9 /* Pods_MultiLevelTableViewWithinCTMediatorDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7491393E275234B800F29BA4 = {
+			isa = PBXGroup;
+			children = (
+				74913949275234B800F29BA4 /* MultiLevelTableViewWithinCTMediatorDemo */,
+				74913948275234B800F29BA4 /* Products */,
+				C79109A923B451073A24FC60 /* Pods */,
+				04DE524DD6EC0DD8ECB35B71 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		74913948275234B800F29BA4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				74913947275234B800F29BA4 /* MultiLevelTableViewWithinCTMediatorDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		74913949275234B800F29BA4 /* MultiLevelTableViewWithinCTMediatorDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7491397E275236C200F29BA4 /* Controllers */,
+				74913982275236C200F29BA4 /* CTMediator */,
+				74913981275236C200F29BA4 /* Models */,
+				74913987275236C200F29BA4 /* MultiLevelCraftModule */,
+				74913971275236C200F29BA4 /* MultiLevelModule */,
+				7491396B275236C200F29BA4 /* Resources */,
+				7491398C275236C200F29BA4 /* ViewModels */,
+				74913970275236C200F29BA4 /* Views */,
+				7491394A275234B800F29BA4 /* AppDelegate.h */,
+				7491394B275234B800F29BA4 /* AppDelegate.m */,
+				7491394D275234B800F29BA4 /* SceneDelegate.h */,
+				7491394E275234B800F29BA4 /* SceneDelegate.m */,
+				74913950275234B800F29BA4 /* ViewController.h */,
+				74913951275234B800F29BA4 /* ViewController.m */,
+				74913953275234B800F29BA4 /* Main.storyboard */,
+				74913956275234C500F29BA4 /* Assets.xcassets */,
+				74913958275234C500F29BA4 /* LaunchScreen.storyboard */,
+				7491395B275234C500F29BA4 /* Info.plist */,
+				7491395C275234C500F29BA4 /* main.m */,
+				749139652752350300F29BA4 /* MultiLevel.pch */,
+			);
+			path = MultiLevelTableViewWithinCTMediatorDemo;
+			sourceTree = "<group>";
+		};
+		7491396B275236C200F29BA4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7491396C275236C200F29BA4 /* cityResource.json */,
+				7491396D275236C200F29BA4 /* right_arrow@2x.png */,
+				7491396E275236C200F29BA4 /* right_arrow@3x.png */,
+				7491396F275236C200F29BA4 /* Resource.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		74913970275236C200F29BA4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		74913971275236C200F29BA4 /* MultiLevelModule */ = {
+			isa = PBXGroup;
+			children = (
+				74913972275236C200F29BA4 /* Target_MultiLevel.h */,
+				74913973275236C200F29BA4 /* MultiLevelModel.m */,
+				74913974275236C200F29BA4 /* MultiLevelCell.m */,
+				74913975275236C200F29BA4 /* MultiLevelViewModel.m */,
+				74913976275236C200F29BA4 /* MultiLevelViewController.h */,
+				74913977275236C200F29BA4 /* CTMediator+MultiLevel.m */,
+				74913978275236C200F29BA4 /* MultiLevelCell.h */,
+				74913979275236C200F29BA4 /* MultiLevelModel.h */,
+				7491397A275236C200F29BA4 /* Target_MultiLevel.m */,
+				7491397B275236C200F29BA4 /* MultiLevelViewModel.h */,
+				7491397C275236C200F29BA4 /* CTMediator+MultiLevel.h */,
+				7491397D275236C200F29BA4 /* MultiLevelViewController.m */,
+			);
+			path = MultiLevelModule;
+			sourceTree = "<group>";
+		};
+		7491397E275236C200F29BA4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7491397F275236C200F29BA4 /* RootViewController.m */,
+				74913980275236C200F29BA4 /* RootViewController.h */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		74913981275236C200F29BA4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		74913982275236C200F29BA4 /* CTMediator */ = {
+			isa = PBXGroup;
+			children = (
+				74913983275236C200F29BA4 /* CTMediator+HandyTools.m */,
+				74913984275236C200F29BA4 /* CTMediator.m */,
+				74913985275236C200F29BA4 /* CTMediator+HandyTools.h */,
+				74913986275236C200F29BA4 /* CTMediator.h */,
+			);
+			path = CTMediator;
+			sourceTree = "<group>";
+		};
+		74913987275236C200F29BA4 /* MultiLevelCraftModule */ = {
+			isa = PBXGroup;
+			children = (
+				74913988275236C200F29BA4 /* MultiLevelCraftViewController.h */,
+				74913989275236C200F29BA4 /* CTMediator+MultiLevelCraft.m */,
+				7491398A275236C200F29BA4 /* MultiLevelCraftViewController.m */,
+				7491398B275236C200F29BA4 /* CTMediator+MultiLevelCraft.h */,
+			);
+			path = MultiLevelCraftModule;
+			sourceTree = "<group>";
+		};
+		7491398C275236C200F29BA4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C79109A923B451073A24FC60 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63794E1043B900DE5F8E1E65 /* Pods-MultiLevelTableViewWithinCTMediatorDemo.debug.xcconfig */,
+				293D2DB90C11D685A4704B43 /* Pods-MultiLevelTableViewWithinCTMediatorDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		74913946275234B800F29BA4 /* MultiLevelTableViewWithinCTMediatorDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74913960275234C500F29BA4 /* Build configuration list for PBXNativeTarget "MultiLevelTableViewWithinCTMediatorDemo" */;
+			buildPhases = (
+				AFEF8EDA4F25DEEA634874F9 /* [CP] Check Pods Manifest.lock */,
+				74913943275234B800F29BA4 /* Sources */,
+				74913944275234B800F29BA4 /* Frameworks */,
+				74913945275234B800F29BA4 /* Resources */,
+				54B7ED39CA6E82B524756B62 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MultiLevelTableViewWithinCTMediatorDemo;
+			productName = MultiLevelTableViewWithinCTMediatorDemo;
+			productReference = 74913947275234B800F29BA4 /* MultiLevelTableViewWithinCTMediatorDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7491393F275234B800F29BA4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					74913946275234B800F29BA4 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 74913942275234B800F29BA4 /* Build configuration list for PBXProject "MultiLevelTableViewWithinCTMediatorDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7491393E275234B800F29BA4;
+			productRefGroup = 74913948275234B800F29BA4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				74913946275234B800F29BA4 /* MultiLevelTableViewWithinCTMediatorDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		74913945275234B800F29BA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7491398F275236C200F29BA4 /* right_arrow@3x.png in Resources */,
+				7491395A275234C500F29BA4 /* LaunchScreen.storyboard in Resources */,
+				7491398E275236C200F29BA4 /* right_arrow@2x.png in Resources */,
+				74913957275234C500F29BA4 /* Assets.xcassets in Resources */,
+				7491398D275236C200F29BA4 /* cityResource.json in Resources */,
+				74913990275236C200F29BA4 /* Resource.json in Resources */,
+				74913955275234B800F29BA4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		54B7ED39CA6E82B524756B62 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MultiLevelTableViewWithinCTMediatorDemo/Pods-MultiLevelTableViewWithinCTMediatorDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MultiLevelTableViewWithinCTMediatorDemo/Pods-MultiLevelTableViewWithinCTMediatorDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MultiLevelTableViewWithinCTMediatorDemo/Pods-MultiLevelTableViewWithinCTMediatorDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFEF8EDA4F25DEEA634874F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MultiLevelTableViewWithinCTMediatorDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		74913943275234B800F29BA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74913992275236C200F29BA4 /* MultiLevelCell.m in Sources */,
+				7491399A275236C200F29BA4 /* CTMediator+MultiLevelCraft.m in Sources */,
+				74913952275234B800F29BA4 /* ViewController.m in Sources */,
+				7491399B275236C200F29BA4 /* MultiLevelCraftViewController.m in Sources */,
+				7491394C275234B800F29BA4 /* AppDelegate.m in Sources */,
+				74913995275236C200F29BA4 /* Target_MultiLevel.m in Sources */,
+				74913999275236C200F29BA4 /* CTMediator.m in Sources */,
+				7491395D275234C500F29BA4 /* main.m in Sources */,
+				74913994275236C200F29BA4 /* CTMediator+MultiLevel.m in Sources */,
+				74913998275236C200F29BA4 /* CTMediator+HandyTools.m in Sources */,
+				74913991275236C200F29BA4 /* MultiLevelModel.m in Sources */,
+				74913997275236C200F29BA4 /* RootViewController.m in Sources */,
+				74913996275236C200F29BA4 /* MultiLevelViewController.m in Sources */,
+				7491394F275234B800F29BA4 /* SceneDelegate.m in Sources */,
+				74913993275236C200F29BA4 /* MultiLevelViewModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		74913953275234B800F29BA4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74913954275234B800F29BA4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		74913958275234C500F29BA4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74913959275234C500F29BA4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7491395E275234C500F29BA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7491395F275234C500F29BA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		74913961275234C500F29BA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63794E1043B900DE5F8E1E65 /* Pods-MultiLevelTableViewWithinCTMediatorDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UKN88ZK5LF;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MultiLevelTableViewWithinCTMediatorDemo/MultiLevel.pch";
+				INFOPLIST_FILE = MultiLevelTableViewWithinCTMediatorDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wdyzmx.MultiLevelTableViewWithinCTMediatorDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		74913962275234C500F29BA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 293D2DB90C11D685A4704B43 /* Pods-MultiLevelTableViewWithinCTMediatorDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UKN88ZK5LF;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MultiLevelTableViewWithinCTMediatorDemo/MultiLevel.pch";
+				INFOPLIST_FILE = MultiLevelTableViewWithinCTMediatorDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wdyzmx.MultiLevelTableViewWithinCTMediatorDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		74913942275234B800F29BA4 /* Build configuration list for PBXProject "MultiLevelTableViewWithinCTMediatorDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7491395E275234C500F29BA4 /* Debug */,
+				7491395F275234C500F29BA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74913960275234C500F29BA4 /* Build configuration list for PBXNativeTarget "MultiLevelTableViewWithinCTMediatorDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74913961275234C500F29BA4 /* Debug */,
+				74913962275234C500F29BA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7491393F275234B800F29BA4 /* Project object */;
+}
