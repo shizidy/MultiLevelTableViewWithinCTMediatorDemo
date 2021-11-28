@@ -19,8 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view. backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:self.tableView];
+    [self setUI];
     // Do any additional setup after loading the view.
+}
+
+- (void)setUI {
+    [self.view addSubview:self.tableView];
 }
 
 #pragma mark - UITableViewDataSource
