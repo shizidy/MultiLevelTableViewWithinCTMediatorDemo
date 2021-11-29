@@ -54,6 +54,16 @@
         }];
         [[CTMediator sharedInstance] pushViewController:viewController animated:YES];
     }
+    
+    if (btn.tag == 2) {
+        UIViewController *viewController = [[CTMediator sharedInstance] CTMediator_MultiLevelCraftViewControllerWithCallBack:^(id _Nonnull obj) {
+            if ([obj isKindOfClass:[MultiLevelCraftModel class]]) {
+                MultiLevelModel *model = obj;
+                NSLog(@"您的选择：%@", model.name);
+            }
+        }];
+        [[CTMediator sharedInstance] pushViewController:viewController animated:YES];
+    }
 }
 
 /*

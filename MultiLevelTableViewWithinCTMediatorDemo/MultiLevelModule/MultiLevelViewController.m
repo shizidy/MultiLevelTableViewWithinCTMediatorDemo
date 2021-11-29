@@ -69,32 +69,38 @@
          2.怎么查找要保存的数据，思路：1.两个相同层级（level）之间的数据即为该层级的展开状态下的数据 2.该层级与首次找到比他大的层级之间的数据
          3.例如北京市与河北省之间，假如北京这一层级处于展开状态，在placesArray中寻找北京（level1=0）与河北省（level2=0）判断条件level1=level2，把这两者中间的数据保存起来，或者北京市市辖区（level1=1）与河北省（level2=0）之间的数据，判断条件level1>level2
          */
+        // 起始index
         NSInteger startIndex = indexPath.row + 1;
-        NSInteger endIndex = startIndex;
-        NSArray *tmpArray = @[];
+        // 终止index并赋初值self.viewModel.placesArray.count
+        NSInteger endIndex = self.viewModel.placesArray.count;
+        // 保存删除的model
+        NSMutableArray *modelArray = [NSMutableArray array];
+        // 保存indexPath
+        NSMutableArray *indexPathArray = [NSMutableArray array];
+        
         for (NSInteger i = startIndex; i < self.viewModel.placesArray.count; i++) {
             MultiLevelModel *tmpModel = self.viewModel.placesArray[i];
             if (model.level >= tmpModel.level) {
                 endIndex = i;
                 break;
             }
+            // 添加各indexPath
+            NSIndexPath *tmpIndexPath = [NSIndexPath indexPathForRow:i inSection:0];
+            [indexPathArray addObject:tmpIndexPath];
+            // 添加model
+            [modelArray addObject:tmpModel];
         }
         NSInteger length = endIndex - startIndex;
         if (length == 0) {
             return;
         }
-        tmpArray = [self.viewModel.placesArray subarrayWithRange:NSMakeRange(startIndex, length)];
-        self.viewModel.statesDictionary[model.code] = tmpArray;
+//        modelArray = [self.viewModel.placesArray subarrayWithRange:NSMakeRange(startIndex, length)];
+        self.viewModel.statesDictionary[model.code] = modelArray;
         // 操作数据源
-        [self.viewModel.placesArray removeObjectsInRange:NSMakeRange(indexPath.row + 1, length)];
+        [self.viewModel.placesArray removeObjectsInRange:NSMakeRange(startIndex, length)];
         // 删除行
-        NSMutableArray *marray = [[NSMutableArray alloc] init];
-        for (int i = 0; i < tmpArray.count; i++) {
-            NSIndexPath *tmpIndexPath = [NSIndexPath indexPathForRow:indexPath.row + 1 + i inSection:0];
-            [marray addObject:tmpIndexPath];
-        }
         [self.tableView beginUpdates];
-        [self.tableView deleteRowsAtIndexPaths:marray withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.tableView deleteRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationAutomatic];
         [self.tableView endUpdates];
     } else {
 #pragma mark - 展开级联
@@ -102,30 +108,31 @@
         // 执行箭头旋转动画
         [cell makeArrowImgViewRotation:M_PI / 2];
         
-        NSArray *tmpArray = @[];
+        NSArray *modelArray = @[];
         for (NSString *placeCode in self.viewModel.statesDictionary.allKeys) {
             if ([placeCode isEqualToString:model.code]) {
-                tmpArray = self.viewModel.statesDictionary[model.code];
+                modelArray = self.viewModel.statesDictionary[model.code];
                 break;
             }
         }
         // 没有匹配到
-        if (tmpArray.count == 0) {
-            tmpArray = model.children;
-            for (MultiLevelModel *subModel in tmpArray) {
+        if (modelArray.count == 0) {
+            modelArray = model.children;
+            // 计算level
+            for (MultiLevelModel *subModel in modelArray) {
                 subModel.level = model.level + 1;
             }
         }
-        // 操作数据源
-        [self.viewModel.placesArray insertObjects:tmpArray atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(indexPath.row + 1, tmpArray.count)]];
         // 增加行
-        NSMutableArray *marray = [[NSMutableArray alloc] init];
-        for (int i = 0; i < tmpArray.count; i++) {
+        NSMutableArray *indexPathArray = [NSMutableArray array];
+        for (int i = 0; i < modelArray.count; i++) {
             NSIndexPath *tmpIndexPath = [NSIndexPath indexPathForRow:indexPath.row + 1 + i inSection:0];
-            [marray addObject:tmpIndexPath];
+            [indexPathArray addObject:tmpIndexPath];
+            // 插入数据model
+            [self.viewModel.placesArray insertObject:modelArray[i] atIndex:indexPath.row + 1 + i];
         }
         [self.tableView beginUpdates];
-        [self.tableView insertRowsAtIndexPaths:marray withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.tableView insertRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationAutomatic];
         [self.tableView endUpdates];
     }
 }
