@@ -6,7 +6,6 @@
 //
 
 #import "MultiLevelViewModel.h"
-#import "MultiLevelModel.h"
 
 @implementation MultiLevelViewModel
 

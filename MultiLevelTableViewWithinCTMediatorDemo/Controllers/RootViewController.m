@@ -47,9 +47,15 @@
 - (void)buttonAction:(UIButton *)btn {
     if (btn.tag == 1) {
         UIViewController *viewController = [[CTMediator sharedInstance] CTMediator_MultiLevelControllerWithCallBack:^(id _Nonnull obj) {
-            if ([obj isKindOfClass:[MultiLevelModel class]]) {
-                MultiLevelModel *model = obj;
-                NSLog(@"您的选择：%@", model.name);
+            if ([obj isKindOfClass:[NSDictionary class]]) {
+                /*
+                 @"selectedModel": model,
+                 @"selectedModelArray": marray,
+                 @"selectedFormatString": str
+                 */
+                MultiLevelModel *model = obj[@"selectedModel"];
+                NSLog(@"你的选择：%@", model.name);
+                NSLog(@"层级关系：%@", obj[@"selectedFormatString"]);
             }
         }];
         [[CTMediator sharedInstance] pushViewController:viewController animated:YES];
@@ -57,9 +63,15 @@
     
     if (btn.tag == 2) {
         UIViewController *viewController = [[CTMediator sharedInstance] CTMediator_MultiLevelCraftViewControllerWithCallBack:^(id _Nonnull obj) {
-            if ([obj isKindOfClass:[MultiLevelCraftModel class]]) {
-                MultiLevelModel *model = obj;
-                NSLog(@"您的选择：%@", model.name);
+            if ([obj isKindOfClass:[NSDictionary class]]) {
+                /*
+                 @"selectedModel": model,
+                 @"selectedModelArray": marray,
+                 @"selectedFormatString": str
+                 */
+                MultiLevelCraftModel *model = obj[@"selectedModel"];
+                NSLog(@"你的选择：%@", model.name);
+                NSLog(@"层级关系：%@", obj[@"selectedFormatString"]);
             }
         }];
         [[CTMediator sharedInstance] pushViewController:viewController animated:YES];

@@ -6,7 +6,6 @@
 //
 
 #import "MultiLevelCraftViewModel.h"
-#import "MultiLevelCraftModel.h"
 
 @implementation MultiLevelCraftViewModel
 
@@ -25,13 +24,10 @@
 //    NSLog(@"%@", jsonArray);
     self.statesDictionary = [NSMutableDictionary dictionary];
     self.craftsArray = [NSMutableArray array];
-    self.otherCraftsArray = [NSMutableArray array];
     self.allCraftsArray = [MultiLevelCraftModel mj_objectArrayWithKeyValuesArray:jsonArray];
     for (MultiLevelCraftModel *model in self.allCraftsArray) {
         if (!model.pid) {
             [self.craftsArray addObject:model];
-        } else {
-            [self.otherCraftsArray addObject:model];
         }
     }
 }

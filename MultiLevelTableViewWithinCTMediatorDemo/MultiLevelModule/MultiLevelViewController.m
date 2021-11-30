@@ -8,6 +8,7 @@
 #import "MultiLevelViewController.h"
 #import "MultiLevelViewModel.h"
 #import "MultiLevelCell.h"
+#import "MultiLevelModel.h"
 
 @interface MultiLevelViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) MultiLevelViewModel *viewModel;
@@ -54,7 +55,36 @@
     
     // 当没有子children或者children为空时直接return
     if (!model.children || !model.children.count) {
-        self.callBack(model);
+        /*
+         1.倒序查找父节点即可找到层级关系，如：北京->市辖区->朝阳区
+         2.查找思路：对比level值大小，倒序找到第一个比自己level值小的即为自己的父级
+         3.level值的层级关系定义是：比如北京->市辖区->朝阳区对应的level值为0->1->2
+         */
+        // placesStr保存拼接的层级（节点），初始化为本节点
+        NSString *str = [NSString stringWithString:model.name];
+        // 初始化marray保存第一个本节点
+        NSMutableArray<MultiLevelModel *> *marray = [NSMutableArray arrayWithObject:model];
+        // 初始化tmpLevel为当前model的level
+        NSInteger level = model.level;
+        for (NSInteger i = indexPath.row - 1; i >= 0; i--) {
+            MultiLevelModel *tmpModel = self.viewModel.placesArray[i];
+            if (level > tmpModel.level) {
+                str = [NSString stringWithFormat:@"%@->%@", tmpModel.name, str];
+                [marray insertObject:tmpModel atIndex:0];
+                // 重置节点tmpLevel为当前条件匹配的tmpModel.level
+                level = tmpModel.level;
+            }
+            if (tmpModel.level == 0) {
+                break;
+            }
+        }
+        // 回调传参，可自定义
+        NSDictionary *params = @{
+            @"selectedModel": model,
+            @"selectedModelArray": marray,
+            @"selectedFormatString": str
+        };
+        self.callBack(params);
         [self.navigationController popViewControllerAnimated:YES];
         return;
     }
@@ -74,9 +104,9 @@
         // 终止index并赋初值self.viewModel.placesArray.count
         NSInteger endIndex = self.viewModel.placesArray.count;
         // 保存删除的model
-        NSMutableArray *modelArray = [NSMutableArray array];
+        NSMutableArray<MultiLevelModel *> *modelArray = [NSMutableArray array];
         // 保存indexPath
-        NSMutableArray *indexPathArray = [NSMutableArray array];
+        NSMutableArray<NSIndexPath *> *indexPathArray = [NSMutableArray array];
         
         for (NSInteger i = startIndex; i < self.viewModel.placesArray.count; i++) {
             MultiLevelModel *tmpModel = self.viewModel.placesArray[i];
@@ -124,7 +154,7 @@
             }
         }
         // 增加行
-        NSMutableArray *indexPathArray = [NSMutableArray array];
+        NSMutableArray<NSIndexPath *> *indexPathArray = [NSMutableArray array];
         for (int i = 0; i < modelArray.count; i++) {
             NSIndexPath *tmpIndexPath = [NSIndexPath indexPathForRow:indexPath.row + 1 + i inSection:0];
             [indexPathArray addObject:tmpIndexPath];

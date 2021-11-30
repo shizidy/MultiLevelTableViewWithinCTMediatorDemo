@@ -7,6 +7,7 @@
 
 #import "MultiLevelCraftViewController.h"
 #import "MultiLevelCraftViewModel.h"
+#import "MultiLevelCraftModel.h"
 #import "MultiLevelCell.h"
 
 @interface MultiLevelCraftViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -56,6 +57,52 @@
     // 获取cell
     MultiLevelCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
+    BOOL isMatched = NO;
+    for (MultiLevelCraftModel *craftModel in self.viewModel.allCraftsArray) {
+        if ([craftModel.craft_id isEqualToString:model.craft_id]) {
+            continue;
+        }
+        if ([craftModel.pid isEqualToString:model.craft_id]) {
+            isMatched = YES;
+            break;
+        }
+    }
+    if (!isMatched) {
+        /*
+         1.倒序查找父节点即可找到层级关系
+         2.查找思路：对比level值大小，倒序找到第一个比自己level值小的即为自己的父级
+         3.level值的层级关系定义是：level值为0->1->2->3...
+         */
+        // 初始化第一个节点为本节点
+        NSMutableArray<MultiLevelCraftModel *> *marray = [NSMutableArray arrayWithObject:model];
+        // 初始化str
+        NSString *str = model.name;
+        // 初始化level
+        NSInteger level = [model.level_code componentsSeparatedByString:@"."].count;
+        for (NSInteger i = indexPath.row - 1; i >= 0; i--) {
+            MultiLevelCraftModel *tmpModel = self.viewModel.craftsArray[i];
+            NSInteger tmpLevel = [tmpModel.level_code componentsSeparatedByString:@"."].count;
+            if (level > tmpLevel) {
+                str = [NSString stringWithFormat:@"%@->%@", tmpModel.name, str];
+                [marray insertObject:tmpModel atIndex:0];
+                // 重置level
+                level = tmpLevel;
+            }
+            if (tmpLevel == 1) {
+                break;
+            }
+        }
+        // 回调传参，可自定义
+        NSDictionary *params = @{
+            @"selectedModel": model,
+            @"selectedModelArray": marray,
+            @"selectedFormatString": str
+        };
+        self.callBack(params);
+        [self.navigationController popViewControllerAnimated:YES];
+        return;
+    }
+    
     if (model.isExpanded) {
 #pragma mark - 关闭级联
         model.isExpanded = NO;
@@ -67,9 +114,9 @@
         // 终止index并赋初值self.viewModel.craftsArray.count
         NSInteger endIndex = self.viewModel.craftsArray.count;
         // 保存删除的model
-        NSMutableArray *modelArray = [NSMutableArray array];
+        NSMutableArray<MultiLevelCraftModel *> *modelArray = [NSMutableArray array];
         // 保存indexPath
-        NSMutableArray *indexPathArray = [NSMutableArray array];
+        NSMutableArray<NSIndexPath *> *indexPathArray = [NSMutableArray array];
         NSArray *array1 = [model.level_code componentsSeparatedByString:@"."];
         
         for (NSInteger i = startIndex; i < self.viewModel.craftsArray.count; i++) {
@@ -89,7 +136,6 @@
         if (length == 0) {
             return;
         }
-//        modelArray = [self.viewModel.craftsArray subarrayWithRange:NSMakeRange(startIndex, length)];
         self.viewModel.statesDictionary[model.craft_id] = modelArray;
         // 操作数据源
         [self.viewModel.craftsArray removeObjectsInRange:NSMakeRange(indexPath.row + 1, length)];
@@ -104,7 +150,7 @@
         [cell makeArrowImgViewRotation:M_PI / 2];
         
         // 生成modelArray
-        NSMutableArray *modelArray = [NSMutableArray array];
+        NSMutableArray<MultiLevelCraftModel *> *modelArray = [NSMutableArray array];
         for (NSString *craftId in self.viewModel.statesDictionary.allKeys) {
             if ([craftId isEqualToString:model.craft_id]) {
                 modelArray = self.viewModel.statesDictionary[model.craft_id];
@@ -112,10 +158,9 @@
             }
         }
         if (modelArray.count == 0) {
-            NSMutableArray *allCraftsArrayCopy = [self.viewModel.allCraftsArray mutableCopy];
+            NSMutableArray *allCraftsArrayCopy = self.viewModel.allCraftsArray.mutableCopy;
             [allCraftsArrayCopy removeObjectsInArray:self.viewModel.craftsArray];
-            self.viewModel.otherCraftsArray = allCraftsArrayCopy;
-            for (MultiLevelCraftModel *tmpModel in self.viewModel.otherCraftsArray) {
+            for (MultiLevelCraftModel *tmpModel in allCraftsArrayCopy) {
                 if ([tmpModel.pid isEqualToString:model.craft_id]) {
                     [modelArray addObject:tmpModel];
                 }
@@ -123,7 +168,7 @@
             // 对marray内的model依据level_code进行排序，因为level_code数值的小数点后数字表示其顺序
             [self quickSortMutiLevelCraftModelByLevel_codeWithArray:modelArray leftIndex:0 rightIndex:modelArray.count - 1];
         }
-        NSMutableArray *indexPathArray = [NSMutableArray array];
+        NSMutableArray<NSIndexPath *> *indexPathArray = [NSMutableArray array];
         for (int i = 0; i < modelArray.count; i++) {
             NSIndexPath *tmpIndexPath = [NSIndexPath indexPathForRow:indexPath.row + 1 + i inSection:0];
             [indexPathArray addObject:tmpIndexPath];

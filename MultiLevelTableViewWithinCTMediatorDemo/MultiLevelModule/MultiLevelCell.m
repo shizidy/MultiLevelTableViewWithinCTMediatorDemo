@@ -85,12 +85,12 @@
 - (void)fillCellWithViewModel:(MultiLevelCraftViewModel *)viewModel indexPath:(NSIndexPath *)indexPath {
     MultiLevelCraftModel *model = viewModel.craftsArray[indexPath.row];
     _titleLabel.text = model.name;
-    NSMutableArray *allCraftsArrayCopy = [viewModel.allCraftsArray mutableCopy];
-    [allCraftsArrayCopy removeObject:model];
-    viewModel.otherCraftsArray = allCraftsArrayCopy;
     
     BOOL isMatched = NO;
-    for (MultiLevelCraftModel *craftModel in viewModel.otherCraftsArray) {
+    for (MultiLevelCraftModel *craftModel in viewModel.allCraftsArray) {
+        if ([craftModel.craft_id isEqualToString:model.craft_id]) {
+            continue;
+        }
         if ([craftModel.pid isEqualToString:model.craft_id]) {
             isMatched = YES;
             break;
@@ -102,7 +102,6 @@
     } else {
         _arrowImgView.hidden = YES;
     }
-    
     if (model.isExpanded) {
         _arrowImgView.transform = CGAffineTransformMakeRotation(M_PI / 2);
     } else {
